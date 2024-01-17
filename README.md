@@ -1,13 +1,12 @@
-#Домашнее задание 1. Vagrant-стенд для обновления ядра и создания образа системы
-##Описание домашнего задания
+# Домашнее задание 1. Vagrant-стенд для обновления ядра и создания образа системы
+## Описание домашнего задания
 1) Обновить ядро ОС из репозитория ELRepo
 2) Создать Vagrant box c помощью Packer
 3) Загрузить Vagrant box в Vagrant Cloud
-####Ссылка на репозиторий GitHub:
+#### Ссылка на репозиторий GitHub:
 https://github.com/sergeisam1973/Vagrant
 ####Описание команд и их вывод
 ##### Обновление ядра
-
 В домашнем каталоге создаем каталог vm и переходим в него:
 mkdir vm
 cd vm
@@ -30,7 +29,7 @@ sudo grub2-set-default 0
 [vagrant@kernel-update ~]$ uname -r
 6.6.11-1.el8.elrepo.x86_64
 
-#####Создание Vagrant box c помощью Packer
+##### Создание Vagrant box c помощью Packer
 
 В каталоге ~/vm создаём папку packer и переходим в нее:
 mkdir packer
@@ -73,7 +72,7 @@ vagrant ssh
 [vagrant@otus-c8 ~]$ uname -r
 6.6.11-1.el8.elrepo.x86_64
 
-#####Загрузка Vagrant box в Vagrant Cloud
+##### Загрузка Vagrant box в Vagrant Cloud
 
 Загрузить в облако предложенным в методичке способом (vagrant cloud publish) не получилось, выгрузка доходила до 100% и вылетала с ошибкой. Поэтому загрузка проведена через веб-интерфейс Vagrant Cloud в своем аккаунте (https://app.vagrantup.com/boxes/new).
 
@@ -91,5 +90,5 @@ serg@serg-VirtualBox:~/vm/packer$ vagrant box add --name centos8-kernel6_ https:
 vagrant up
 vagrant ssh
 
-####Особенности проектирования и реализации решения:
+#### Особенности проектирования и реализации решения:
 При выполнении домашнего задания использовались Vagrant 2.4.0, VirtualBox 7.0.12 r159484 и Packer 1.10.0, хостовая ОС: Ubuntu 22.04 Desktop (виртуальная машина под VirtualBox).
